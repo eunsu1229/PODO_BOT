@@ -1,5 +1,10 @@
 import discord,random,asyncio
 from discord.ext import commands
+from cmath import log
+from distutils.sysconfig import PREFIX
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 PREFIX = os.environ['PREFIX']
 TOKEN = os.environ['TOKEN']
