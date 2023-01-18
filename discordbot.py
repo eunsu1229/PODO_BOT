@@ -1,32 +1,25 @@
-from cmath import log
-from distutils.sysconfig import PREFIX
-import discord
-import random
-from dotenv import load_dotenv
+import discord,random,asyncio
 from discord.ext import commands
-import os
-load_dotenv()
 
 PREFIX = os.environ['PREFIX']
 TOKEN = os.environ['TOKEN']
 
-client = discord.Client()
-token = "MTA2NTE4MzQ4MDQyMzY0NTIwNQ.GAghPS.rplKGGm61cgyj-kOCtRuF2cjALHjY5WGlnhJjM"
+bot = discord.Bot()
 a = ["누구세요 ?😗","안녕하세요😊","안녕 !😆","반가워 !😚","안녕 ? 나는 포도봇이야 !🍇","너는.. 누구야..?🤔","뿡뿡뿡~💨","야1미~😋","야 뭘봐 !😡","🤔"]
 
-@client.event
+@bot.event
 async def on_ready():
     print("ready to 포도봇 !")
 
-@client.slash_command(guild_ids = [934742265828614165], description="포도봇에게 인사를 해보세요 !")
+@bot.slash_command(guild_ids = [1065253502068207667], description="포도봇에게 인사를 해보세요 !")
 async def 인사(ctx):
     rd = random.choice(a)
     embed=discord.Embed(title=" ", color=0xb750fb)
-    embed.add_field(name="포도봇 : {}님 {}".format(user.name,rd), value="", inline=True)
+    embed.add_field(name="포도봇 : {}".format(rd), value="", inline=True)
     embed.set_footer(text="Made by WELCIKS")
     await ctx.send(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="히스터 대머리 ?")
+@bot.slash_command(guild_ids = [1065253502068207667], description="히스터 대머리 ?")
 async def 히스터(ctx):
     embed=discord.Embed(title=" ", description="히스터는 대머리다 ?", color=0xb750fb)
     embed.set_author(name="히스터 / Hister")
@@ -38,7 +31,7 @@ async def 히스터(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="피피 PiPi")
+@bot.slash_command(guild_ids = [1065253502068207667], description="피피 PiPi")
 async def 피피(ctx):
     embed=discord.Embed(title=" ", description="피피 = PiPi = 삐삐", color=0xb750fb)
     embed.set_author(name="피피 / PiPi")
@@ -51,7 +44,7 @@ async def 피피(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="요요 = YOYO")
+@bot.slash_command(guild_ids = [1065253502068207667], description="요요 = YOYO")
 async def 요요(ctx):
     embed=discord.Embed(title=" ", description="요요 : 루카쿠를 굉장히 사랑함 / 요요", color=0xb750fb)
     embed.set_author(name="요요 / YOYO")
@@ -64,7 +57,7 @@ async def 요요(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="디아일 = 크리스탈아일")
+@bot.slash_command(guild_ids = [1065253502068207667], description="디아일 = 크리스탈아일")
 async def 아일(ctx):
     embed=discord.Embed(title=" ", description="디아일 / 크아일", color=0xb750fb)
     embed.set_author(name="크리스탈 아일 / Crystal Isles")
@@ -77,7 +70,7 @@ async def 아일(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="기가노토사우루스 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="기가노토사우루스 성장시간")
 async def 기가(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="기가노토사우루스 / Giganotosaurus")
@@ -94,7 +87,7 @@ async def 기가(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="벨로나사우루스 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="벨로나사우루스 성장시간")
 async def 벨로(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="벨로나사우루스 / Velonasaur")
@@ -111,7 +104,7 @@ async def 벨로(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="스테고사우루스 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="스테고사우루스 성장시간")
 async def 스테고(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="스테고사우루스 / Stegosaurus")
@@ -128,7 +121,7 @@ async def 스테고(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="와이번 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="와이번 성장시간")
 async def 와이번(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="모든 와이번 / ALL Wyvern")
@@ -145,7 +138,7 @@ async def 와이번(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="마나가르마 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="마나가르마 성장시간")
 async def 마나(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="마나가르마 / Managarmr")
@@ -162,7 +155,7 @@ async def 마나(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="테리지노사우루스 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="테리지노사우루스 성장시간")
 async def 테리지노(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="테리지노사우루스 / Therizinosaur")
@@ -179,7 +172,7 @@ async def 테리지노(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="쉐도우메인 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="쉐도우메인 성장시간")
 async def 쉐메(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="쉐도우메인 / Shadowmane")
@@ -196,7 +189,7 @@ async def 쉐메(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="렉스 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="렉스 성장시간")
 async def 렉스(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="렉스 / Rex")
@@ -213,7 +206,7 @@ async def 렉스(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="사마귀 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="사마귀 성장시간")
 async def 사마귀(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="사마귀 / Mantis")
@@ -230,7 +223,7 @@ async def 사마귀(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="데스모두스 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="데스모두스 성장시간")
 async def 데스모(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="데스모두스 / Desmodus")
@@ -247,7 +240,7 @@ async def 데스모(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="투소테우티스 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="투소테우티스 성장시간")
 async def 투소(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="투소테우티스 / Tusoteuthis")
@@ -264,7 +257,7 @@ async def 투소(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="유티라누스 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="유티라누스 성장시간")
 async def 유티(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="유티라누스 / Yutyrannus")
@@ -281,7 +274,7 @@ async def 유티(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="케찰 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="케찰 성장시간")
 async def 케찰(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="케찰 / Quetzal")
@@ -298,7 +291,7 @@ async def 케찰(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="카르보네미스 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="카르보네미스 성장시간")
 async def 카르보(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="카르보네미스 / Carbonemys")
@@ -315,7 +308,7 @@ async def 카르보(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="카르노타우루스 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="카르노타우루스 성장시간")
 async def 카르노(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="카르노타우루스 / Carnotaurus")
@@ -332,7 +325,7 @@ async def 카르노(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="데이노니쿠스 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="데이노니쿠스 성장시간")
 async def 데이노(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="데이노니쿠스 / Deinonychus")
@@ -349,7 +342,7 @@ async def 데이노(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="블러드스토커 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="블러드스토커 성장시간")
 async def 블스(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="블러드스토커 / Bloodstalker")
@@ -366,7 +359,7 @@ async def 블스(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="스피노 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="스피노 성장시간")
 async def 스피노(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="스피노 / Spino")
@@ -383,7 +376,7 @@ async def 스피노(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="바리오닉스 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="바리오닉스 성장시간")
 async def 바리오(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="바리오닉스 / Baryonyx")
@@ -400,7 +393,7 @@ async def 바리오(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="오비스 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="오비스 성장시간")
 async def 오비스(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="오비스 / Ovis")
@@ -417,7 +410,7 @@ async def 오비스(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="에쿠스(유니콘) 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="에쿠스(유니콘) 성장시간")
 async def 에쿠스(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="에쿠스 / Equus(Unicorn)")
@@ -434,7 +427,7 @@ async def 에쿠스(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="파라케라테리움 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="파라케라테리움 성장시간")
 async def 레이서(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="파라케라테리움 / Paraceratherium")
@@ -451,7 +444,7 @@ async def 레이서(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="다에오돈 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="다에오돈 성장시간")
 async def 다에오돈(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="다에오돈 / Daeodon")
@@ -468,7 +461,7 @@ async def 다에오돈(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="맘모스 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="맘모스 성장시간")
 async def 맘모스(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="맘모스 / Mammoth")
@@ -485,7 +478,7 @@ async def 맘모스(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="틸라콜레오 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="틸라콜레오 성장시간")
 async def 틸라(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="틸라콜레오 / Thylacoleo")
@@ -502,7 +495,7 @@ async def 틸라(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="시노마크롭스 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="시노마크롭스 성장시간")
 async def 시노마(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="시노마크롭스 / Sinomacrops")
@@ -519,7 +512,7 @@ async def 시노마(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="타페자라 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="타페자라 성장시간")
 async def 타페(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="타페자라 / Tapejara")
@@ -536,7 +529,7 @@ async def 타페(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="아트로 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="아트로 성장시간")
 async def 아트로(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="아트로 / Arthropluera")
@@ -553,7 +546,7 @@ async def 아트로(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="벌브독 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="벌브독 성장시간")
 async def 벌브독(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="벌브독 / Bulbdog")
@@ -570,7 +563,7 @@ async def 벌브독(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="메갈로사우루스 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="메갈로사우루스 성장시간")
 async def 메갈로(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="메갈로사우루스 / Megalosaurus")
@@ -587,7 +580,7 @@ async def 메갈로(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="수달 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="수달 성장시간")
 async def 수달(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="수달 / Otter")
@@ -604,7 +597,7 @@ async def 수달(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="파키 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="파키 성장시간")
 async def 파키(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="파키 / Pachy")
@@ -621,7 +614,7 @@ async def 파키(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="프로콥토돈 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="프로콥토돈 성장시간")
 async def 캥거루(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="프로콥토돈 / Procoptodon")
@@ -638,7 +631,7 @@ async def 캥거루(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="롤렛 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="롤렛 성장시간")
 async def 롤렛(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="롤렛 / Roll Rat")
@@ -655,7 +648,7 @@ async def 롤렛(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="트리케라톱스 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="트리케라톱스 성장시간")
 async def 트리케(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="트리케라톱스 / Triceratops")
@@ -672,7 +665,7 @@ async def 트리케(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="울리라이노 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="울리라이노 성장시간")
 async def 울리(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="울리라이노 / Woolly Rhino")
@@ -689,7 +682,7 @@ async def 울리(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="바실로사우루스 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="바실로사우루스 성장시간")
 async def 바실로(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="바실로사우루스 / Basilosaurus")
@@ -706,7 +699,7 @@ async def 바실로(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="메갈로돈 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="메갈로돈 성장시간")
 async def 메갈로돈(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="메갈로돈 / Megalodon")
@@ -723,7 +716,7 @@ async def 메갈로돈(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="메가셀론 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="메가셀론 성장시간")
 async def 메가셀론(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="메가셀론 / Megachelon")
@@ -740,7 +733,7 @@ async def 메가셀론(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-@client.slash_command(guild_ids = [934742265828614165], description="아르젠타비스 성장시간")
+@bot.slash_command(guild_ids = [1065253502068207667], description="아르젠타비스 성장시간")
 async def 아르젠(ctx):
     embed=discord.Embed(title=" ", description="공식 오피셜 성장시간 ( x 1 )", color=0xb750fb)
     embed.set_author(name="아르젠타비스 / Argentavis")
@@ -757,4 +750,4 @@ async def 아르젠(ctx):
     embed.set_footer(text="Made by WELCIKS")
     await ctx.respond(embed=embed)
 
-client.run(token)
+bot.run(token)
